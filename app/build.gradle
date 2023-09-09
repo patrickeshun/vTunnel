@@ -1,18 +1,19 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     defaultConfig {
         applicationId "com.netbyte.vtunnel"
         minSdkVersion 26
-        targetSdkVersion 32
-        versionCode 160
-        versionName "1.6.0"
+        targetSdkVersion 33
+        versionCode 161
+        versionName "1.6.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     packagingOptions {
-        exclude 'META-INF/INDEX.LIST'
-        exclude 'META-INF/io.netty.versions.properties'
+        resources {
+            excludes += ['META-INF/INDEX.LIST', 'META-INF/io.netty.versions.properties']
+        }
     }
 
     bundle {
@@ -27,6 +28,7 @@ android {
         }
     }
     buildToolsVersion '30.0.3'
+    namespace 'com.netbyte.vtunnel'
 }
 
 dependencies {
